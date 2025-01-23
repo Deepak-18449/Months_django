@@ -9,7 +9,7 @@ month_ly = {
         "mar": "Hello March",
         "api": "Hello Apirl",
         "may": "Hello May",
-        "jun": "Hello June",
+        "jun": None,
         "jul": "Hello July",
         "aug": "Hello August",
         "sep": "Hello September",
@@ -22,14 +22,17 @@ month_ly = {
 def index(request):
     list_items =''
     months = list(month_ly.keys())
+    return HttpResponse(render(request,'index.html',{
+        'months': months,
+    }))
 
-    for month in months:
-        capitalized_month = month.capitalize()
-        month_path = reverse("month-challenge", args=[month])
-        list_items += f'<h1><a href="{month_path}">{capitalized_month}</a></h1>'
+    # for month in months:
+    #     capitalized_month = month.capitalize()
+    #     month_path = reverse("month-challenge", args=[month])
+    #     list_items += f'<h1><a href="{month_path}">{capitalized_month}</a></h1>'
 
-    respone_data = f"<ol>{list_items}</ol>"
-    return HttpResponse(respone_data)
+    # respone_data = f"<ol>{list_items}</ol>"
+    # return HttpResponse(respone_data)
 
 def Month_by_number(request , month):
     print("redirect_month")
@@ -49,7 +52,7 @@ def Month_by_name (request , month):
         # return HttpResponse(f'<center><h1 style="color:blue;">{challeng_text}</h1></center>')
         # return HttpResponse(render_to_string('month/month.html'))
         return HttpResponse(render(request,'month/month.html',{
-            'challeng_text':month
+            'challeng_text':challeng_text
         }))
     except:
         return HttpResponseNotFound("month not found") 
