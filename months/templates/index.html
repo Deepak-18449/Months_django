@@ -1,4 +1,6 @@
-<!DOCTYPE html>
+{% extends "base.html" %}
+
+{% comment %} <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -6,10 +8,12 @@
     <title>month_ly</title>
 </head>
 <body>
-    <h1>hello deepak</h1>
+    
+</body>
+</html> {% endcomment %}
+
+{% block content %}
     {% for month in months %}
         <li><a href="{% url "month-challenge" month %}">{{month}}</a></li>
     {% endfor %}
-    
-</body>
-</html>
+{% endblock %}
