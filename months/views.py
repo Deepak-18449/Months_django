@@ -4,18 +4,18 @@ from django.urls import reverse
 from django.template.loader import render_to_string
 
 month_ly = {
-        "Jan": "Hello January",
-        "feb": "Hello February",
-        "mar": "Hello March",
-        "api": "Hello Apirl",
-        "may": "Hello May",
-        "jun": None,
-        "jul": "Hello July",
-        "aug": "Hello August",
-        "sep": "Hello September",
-        "oct": "Hello October",
-        "nov": "Hello November",
-        "dec": "Hello December",
+        "January": "Hello January",
+        "Febrauary": "Hello February",
+        "March": "Hello March",
+        "Apirl": "Hello Apirl",
+        "May": "Hello May",
+        "June": None,
+        "July": "Hello July",
+        "August": "Hello August",
+        "September": "Hello September",
+        "October": "Hello October",
+        "November": "Hello November",
+        "December": "Hello December",
     }
 
 
